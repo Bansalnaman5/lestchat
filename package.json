@@ -1,0 +1,27 @@
+{
+  "name": "lestchat",
+  "version": "1.0.0",
+  "description": "chat app",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "heheh"
+  ],
+  "author": "Naman Bansal",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "express-ejs-layouts": "^2.5.1",
+    "firebase-admin": "^10.2.0",
+    "nodemailer": "^6.7.5",
+    "nodemon": "^2.0.16",
+    "uuid": "^8.3.2"
+  }
+}
