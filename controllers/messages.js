@@ -98,3 +98,38 @@ exports.saveText = (req, res) => {
   );
   return res.status(200).json({ message:'success' });
 };
+
+let user;
+fs.readFile(__dirname + "/username.json", "utf-8", (err, data) => {
+  if (err) {
+    console.log(err);
+  } else {
+    user = JSON.parse(data);
+  }
+});
+exports.getUser = (req, res) => {
+  fs.readFile(__dirname + "/username.json", "utf-8", (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      user = JSON.parse(data);
+    }
+  });
+  return res.json(user);
+};
+exports.updateUser = (req, res) => {
+  console.log(req.body.user);
+  let date = new Date();
+  fs.writeFile(
+    __dirname + "/username.json",
+    JSON.stringify({ user: req.body.user,created:req.body.created }),
+    "utf-8",
+    (err) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+    }
+  );
+  return res.json({ user: req.body.user });
+};
